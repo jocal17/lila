@@ -89,6 +89,7 @@ object layout {
   private def spaceless(html: String) = raw(spaceRegex.replaceAllIn(html.replace("\\n", ""), ""))
 
   private val dataDev = attr("data-dev")
+  private val dataVapid = attr("data-vapid")
   private val dataUser = attr("data-user")
   private val dataSoundSet = attr("data-sound-set")
   private val dataSocketDomain = attr("data-socket-domain")
@@ -162,6 +163,7 @@ object layout {
           "coords-out" -> (ctx.pref.coords == Pref.Coords.OUTSIDE)
         ),
         dataDev := (!isProd).option("true"),
+        dataVapid := vapidPublicKey,
         dataUser := ctx.userId,
         dataSoundSet := ctx.currentSoundSet.toString,
         dataSocketDomain := socketDomain,

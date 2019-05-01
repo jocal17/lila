@@ -59,6 +59,7 @@ interface Lichess {
   movetimeChart: any;
   hasTouchEvents: boolean;
   mousedownEvent: 'mousedown' | 'touchstart';
+  pushSubscribe(ask: boolean): void;
 }
 
 interface LichessSpeech {
